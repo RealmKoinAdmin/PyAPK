@@ -1,0 +1,58 @@
+#: import FadeTransition from kivy.uix.screenmanagement.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+    MainScreen:
+    SettingsScreen:
+    LoginScreen:
+    BalancePage:
+    
+
+<MainScreen>:
+    name: 'Main Screen'
+    Button:
+      text: "Settings"
+      on_release:  app.root.current = 'Settings Screen'
+      font_size: 40
+    Button:
+      text: "Login"
+      on_release: app.root.current = 'Login Screen'
+      font_size: 40
+    Button:
+      text: 'Balance'
+      on_release: app.root.current = 'Balance Page'
+      font_size: 40
+
+
+# Needs Username / Pass Input Bars (Needs To Use Bar Information For Button Release)
+<LoginScreen>:
+    name: 'Login Screen'
+    Button:
+      text: "Connect"
+      on_release:  app.root.current = 'Settings Screen' # Needs To Be A Actual Login Function.
+      font_size: 40
+    Button:
+      text: "Home"
+      on_release: app.root.current = 'Main Screen'
+      font_size: 40
+    Button:
+      text: 'Balance'
+      on_release: app.root.current = 'Balance Page'
+      font_size: 40
+
+
+# Needs A Address Input Bar (Needs To Use Bar Information For Button Release)
+<BalanceScreen>:
+    name: 'Balance Screen'
+    Button:
+      text: "Check Balance"
+      on_release:   # Needs To Be A Actual Web3 Balance Check Function.
+      font_size: 40
+    Button:
+      text: "Home"
+      on_release: app.root.current = 'Main Screen'
+      font_size: 40
+    Button:
+      text: 'Login'
+      on_release: app.root.current = 'Login Page'
+      font_size: 40
